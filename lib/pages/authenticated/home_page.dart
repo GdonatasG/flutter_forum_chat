@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,6 +9,7 @@ import 'package:flutterforum/model/category.dart';
 import 'package:flutterforum/model/user.dart';
 import 'package:flutterforum/pages/auth/login_page.dart';
 import 'package:flutterforum/pages/authenticated/category_posts_page.dart';
+import 'package:flutterforum/pages/authenticated/profile_page.dart';
 import 'package:flutterforum/pages/authenticated/user_chats_page.dart';
 import 'package:flutterforum/services/auth_service.dart';
 import 'package:flutterforum/services/category_service.dart';
@@ -161,6 +164,15 @@ class _HomePageState extends State<HomePage> {
                 }),
                 leading: Icon(Icons.exit_to_app),
                 title: Text("Sign out"),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(new MaterialPageRoute(
+                      builder: (context) => ProfilePage(user: widget.user)));
+                },
+                leading: Icon(Icons.person),
+                title: Text("Profile"),
               )
             ],
           ));

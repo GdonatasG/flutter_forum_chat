@@ -45,4 +45,8 @@ class AuthService {
       return null;
     }
   }
+
+  Future updateProfile(
+          FirebaseUser user, UserUpdateInfo userUpdateInfo) async =>
+      await user.updateProfile(userUpdateInfo);
 }

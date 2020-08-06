@@ -16,4 +16,10 @@ class UserService {
 
   DocumentReference getFirestoreUserById(String uid) =>
       userCollection.document(uid);
+
+  Future<void> updateUserProfilePicture(
+          String photoUrl, String userDocumentId) async =>
+      await userCollection
+          .document(userDocumentId)
+          .updateData({'photoUrl': photoUrl});
 }
