@@ -3,6 +3,7 @@ class User {
   String name;
   String lastName;
   String username;
+  String photoUrl;
 
   User(this.name, this.lastName, this.username);
 
@@ -11,6 +12,7 @@ class User {
     map['name'] = name;
     map['lastName'] = lastName;
     map['username'] = username;
+    map['photoUrl'] = photoUrl;
 
     return map;
   }
@@ -19,5 +21,6 @@ class User {
     name = data['name'];
     lastName = data['lastName'];
     username = data['username'];
+    photoUrl = data['photoUrl'];
   }
 }
